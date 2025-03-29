@@ -68,7 +68,7 @@ const Navbar = () => {
           } overflow-hidden transition-all duration-500 md:transition-none`}
           id="navbar-dropdown"
         >
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border-2 border-brand-rougefonce bg-[#000000] rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border-2 border-brand-rougefonce rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
               <NavLink
                 to="/"
@@ -79,7 +79,7 @@ const Navbar = () => {
                 }
                 aria-current="page"
               >
-                Home
+                Accueil
               </NavLink>
             </li>
             <li>

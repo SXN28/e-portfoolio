@@ -1,5 +1,6 @@
 import React from "react";
 import AboutSection from "../components/AboutSection";
+import ProjectsCarousel from "../components/ProjectsCarousel";
 
 const Home = () => {
   return (
@@ -72,6 +73,7 @@ const Home = () => {
         </div>
       </section>
       <AboutSection />
+      <ProjectsCarousel />
     </>
   );
 };

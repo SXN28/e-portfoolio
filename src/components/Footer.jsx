@@ -6,7 +6,7 @@ const Footer = () => {
     <footer
       className="py-8"
       style={{
-        backgroundImage: "linear-gradient(to right, #000000 30%, #2B2B2B 100%)"
+        backgroundImage: "linear-gradient(to right, #000000 30%, #1a1a1a 100%)"
       }}
     >
       <div className="max-w-screen-xl mx-auto px-4">
@@ -25,7 +25,7 @@ const Footer = () => {
             to="/"
             className="text-white text-lg hover:text-brand-rougevif transition-colors duration-300"
           >
-            Home
+            Accueil
           </Link>
           <Link
             to="/competences"
