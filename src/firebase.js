@@ -1,23 +1,16 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // Import Firestore
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBPLAGqMU_OeEyoacgpJHZsUv0PIOhxKPc",
-  authDomain: "e-portfolio-d497c.firebaseapp.com",
-  projectId: "e-portfolio-d497c",
-  storageBucket: "e-portfolio-d497c.firebasestorage.app",
-  messagingSenderId: "452921025896",
-  appId: "1:452921025896:web:94b1373007382b1d7ae2dd"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Firestore
 const db = getFirestore(app);
 
-export { db }; // Export Firestore instance
+export { db };
