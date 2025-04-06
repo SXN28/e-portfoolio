@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import 'flowbite';
 
 import Navbar from "./components/Navbar";
@@ -10,9 +10,23 @@ import Home from "./pages/Home.jsx";
 import Competences from "./pages/Competences.jsx";
 import Projets from "./pages/Projets.jsx";
 
-function App() {
+// Créez un composant séparé pour le contenu qui utilise useLocation
+function AppContent() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const pageTitles = {
+      '/': 'Accueil - Mon Portfolio',
+      '/competences': 'Compétences - Mon Portfolio',
+      '/projets': 'Projets - Mon Portfolio',
+      '/projet/:id': 'Détails du projet - Mon Portfolio'
+    };
+    
+    document.title = pageTitles[location.pathname] || 'Mon Portfolio';
+  }, [location]);
+
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -21,7 +35,15 @@ function App() {
         <Route path="/projet/:id" element={<ProjetDetails />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
