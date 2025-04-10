@@ -1,6 +1,7 @@
 import React from "react";
 import AboutSection from "../components/AboutSection";
 import ProjectsCarousel from "../components/ProjectsCarousel";
+import ContactForm from "../components/Contact";
 
 const Home = () => {
   return (
@@ -74,6 +75,7 @@ const Home = () => {
       </section>
       <AboutSection />
       <ProjectsCarousel />
+      <ContactForm />
     </>
   );
 };

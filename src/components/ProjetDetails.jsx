@@ -48,67 +48,54 @@ const ProjetDetails = () => {
 
   return (
     <div className="min-h-screen bg-brand-noirprofond">
-      {/* Header avec effet gradient */}
-      <header className="relative bg-black text-white pt-32 pb-24 overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at top right, #E63946, transparent 40%),
-              radial-gradient(circle at bottom left, #E63946, transparent 40%)
-            `,
-          }}
-        ></div>
-        
-        <div className="relative container mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-brand-rougefonce to-brand-rougevif bg-clip-text text-transparent mb-4">
+      {/* Header inchangé */}
+      <header className="bg-black text-white pt-32 pb-24">
+        <div className="container mx-auto text-center">
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-brand-rougefonce to-brand-rougevif bg-clip-text text-transparent">
             {projet.titre}
           </h1>
-          {projet.client && (
-            <p className="text-xl text-gray-300">Pour {projet.client}</p>
-          )}
         </div>
       </header>
 
       {/* Contenu détaillé du projet */}
       <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Section principale */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Colonne de gauche - Image et métadonnées */}
+          {/* Colonne gauche */}
           <div className="lg:col-span-2 space-y-8">
-            {/* Image principale avec effet de halo */}
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-brand-rougefonce to-brand-rougevif rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
-              <div className="relative aspect-video overflow-hidden rounded-lg shadow-2xl border border-gray-800">
-                {projet.img_base && (
+
+            {/* Image principale */}
+            {projet.img_base && (
+              <div className="relative group">
+                <div className="absolute -inset-2 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-300"></div>
+                <div className="relative aspect-video overflow-hidden rounded-lg shadow-2xl border border-gray-800">
                   <img
-                    src={`/images/${projet.img_base}`}
+                    src={projet.img_base.startsWith("../") ? projet.img_base.replace("../", "/") : `/images/${projet.img_base}`}
                     alt={projet.titre}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                )}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Description détaillée */}
-            <div className="bg-gray-900 bg-opacity-50 rounded-xl p-8 border border-gray-800">
-              <h2 className="text-2xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-brand-rougefonce to-brand-rougevif bg-clip-text text-transparent">
-                  Description du Projet
-                </span>
-              </h2>
-              {projet.description && (
+            {/* Description */}
+            {projet.description && (
+              <div className="bg-black bg-opacity-50 rounded-xl p-8 border border-gray-800">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  <span className="bg-brand-rougevif bg-clip-text text-transparent">
+                    Description du Projet
+                  </span>
+                </h2>
                 <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
                   {projet.description}
                 </p>
-              )}
-            </div>
+              </div>
+            )}
 
-            {/* Détails supplémentaires */}
-            {projet.détails && (
-              <div className="bg-gray-900 bg-opacity-50 rounded-xl p-8 border border-gray-800">
+            {/* Détails techniques */}
+            {projet.détails && projet.détails.trim() !== "" && (
+              <div className="bg-black bg-opacity-50 rounded-xl p-8 border border-gray-800">
                 <h2 className="text-2xl font-bold text-white mb-6">
-                  <span className="bg-gradient-to-r from-brand-rougefonce to-brand-rougevif bg-clip-text text-transparent">
+                  <span className="bg-brand-rougevif bg-clip-text text-transparent">
                     Détails Techniques
                   </span>
                 </h2>
@@ -117,20 +104,37 @@ const ProjetDetails = () => {
                 </div>
               </div>
             )}
+
+            {/* Client */}
+            {(projet.client || projet.client_desc) && (
+              <div className="bg-black bg-opacity-50 rounded-xl p-8 border border-gray-800">
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  <span className="bg-brand-rougevif bg-clip-text text-transparent">
+                    Client
+                  </span>
+                </h2>
+                {projet.client && (
+                  <p className="text-white text-xl font-semibold mb-2">{projet.client}</p>
+                )}
+                {projet.client_desc && (
+                  <p className="text-gray-300 text-lg leading-relaxed whitespace-pre-line">
+                    {projet.client_desc}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
 
-          {/* Colonne de droite - Métadonnées */}
+          {/* Colonne droite */}
           <div className="space-y-8">
-            {/* Fiche projet */}
-            <div className="bg-gray-900 bg-opacity-50 rounded-xl p-8 border border-gray-800 sticky top-8">
+            <div className="bg-black bg-opacity-50 rounded-xl p-8 border border-gray-800 sticky top-20">
               <h2 className="text-xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-brand-rougefonce to-brand-rougevif bg-clip-text text-transparent">
+                <span className="bg-brand-rougevif bg-clip-text text-transparent">
                   Fiche Projet
                 </span>
               </h2>
 
               <div className="space-y-6">
-                {/* Type */}
                 {projet.type && (
                   <div>
                     <h3 className="text-sm font-medium text-gray-400 mb-1">Type</h3>
@@ -138,20 +142,16 @@ const ProjetDetails = () => {
                   </div>
                 )}
 
-                {/* Statut */}
                 {projet.statut && (
                   <div>
                     <h3 className="text-sm font-medium text-gray-400 mb-1">Statut</h3>
                     <div className="flex items-center">
-                      <span className={`flex w-2.5 h-2.5 rounded-full me-2 ${
-                        projet.statut === "Terminé" ? "bg-green-500" : "bg-yellow-500"
-                      }`}></span>
+                      <span className={`flex w-2.5 h-2.5 rounded-full me-2 ${projet.statut === "Terminé" ? "bg-green-500" : "bg-yellow-500"}`}></span>
                       <p className="text-white font-medium">{projet.statut}</p>
                     </div>
                   </div>
                 )}
 
-                {/* Date */}
                 {projet.date && (
                   <div>
                     <h3 className="text-sm font-medium text-gray-400 mb-1">Date</h3>
@@ -159,7 +159,6 @@ const ProjetDetails = () => {
                   </div>
                 )}
 
-                {/* Technologies */}
                 {projet.techno && projet.techno.length > 0 && (
                   <div>
                     <h3 className="text-sm font-medium text-gray-400 mb-2">Technologies</h3>

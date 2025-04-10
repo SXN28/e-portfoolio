@@ -10,6 +10,8 @@ import Home from "./pages/Home.jsx";
 import Competences from "./pages/Competences.jsx";
 import Projets from "./pages/Projets.jsx";
 
+
+
 // Créez un composant séparé pour le contenu qui utilise useLocation
 function AppContent() {
   const location = useLocation();
