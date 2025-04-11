@@ -85,7 +85,7 @@ const AboutSection = () => {
               <div className="absolute -inset-2 bg-gradient-to-r from-brand-rougefonce to-brand-rougevif rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
               <div className="relative">
                 <img 
-                  src="../../images/photo_clem_gang.jpg" 
+                  src="..\..\images\Snapchat-1286623262.jpg" 
                   alt="Clément Foray" 
                   className="rounded-lg shadow-2xl w-full max-w-md border-2 border-gray-800"
                 />

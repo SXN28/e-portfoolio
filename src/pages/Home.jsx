@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import AboutSection from "../components/AboutSection";
 import ProjectsCarousel from "../components/ProjectsCarousel";
 import ContactForm from "../components/Contact";
@@ -21,7 +21,6 @@ const Home = () => {
         }}
       >
         <div className="px-4 mx-auto max-w-screen-xl text-center">
-          {/* Sous-titre ajouté ici */}
           <p className="text-sm uppercase tracking-widest text-brand-rougevif mb-2">
             Clément Foray
           </p>

@@ -18,10 +18,10 @@ function AppContent() {
 
   useEffect(() => {
     const pageTitles = {
-      '/': 'Accueil - Mon Portfolio',
-      '/competences': 'Compétences - Mon Portfolio',
-      '/projets': 'Projets - Mon Portfolio',
-      '/projet/:id': 'Détails du projet - Mon Portfolio'
+      '/': 'Foray Clément',
+      '/competences': 'Compétences',
+      '/projets': 'Mes Projets',
+      '/projet/:id': 'Détails'
     };
     
     document.title = pageTitles[location.pathname] || 'Mon Portfolio';
