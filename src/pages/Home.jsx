@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import AboutSection from "../components/AboutSection";
 import ProjectsCarousel from "../components/ProjectsCarousel";
 import ContactForm from "../components/Contact";
@@ -43,8 +44,8 @@ const Home = () => {
             Je suis Clément Foray, développeur passionné. Découvrez mes projets personnels, professionnels et académiques.
           </p>
           <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-            <a
-              href="/projets"
+            <Link
+              to="/projets"
               className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-brand-rougevif hover:bg-brand-rougefonce focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
             >
               Voir mes projets
@@ -63,13 +64,13 @@ const Home = () => {
                   d="M1 5h12m0 0L9 1m4 4L9 9"
                 />
               </svg>
-            </a>
-            <a
-              href="/competences"
+            </Link>
+            <Link
+              to="/competences"
               className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
             >
               Mes Compétences
-            </a>
+            </Link>
           </div>
         </div>
       </section>
