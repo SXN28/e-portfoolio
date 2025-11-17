@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -123,8 +123,7 @@ const AboutSection = () => {
                   className="text-lg"
                   variants={itemVariants}
                 >
-                    Actuellement en 3ème année de BUT Informatique à l'IUT Lyon 1 (Bourg-en-Bresse), j'approfondis
-                    mes compétences en développement web tout en effectuant mon alternance dans une agence web.
+                    Diplomé d'un BUT Informatique, j'approfondis mes compétences en développement web tout en effectuant mon alternance dans une agence web.
                     Cette double expérience académique et professionnelle me permet de maîtriser les technologies
                     frontend tout en comprenant les enjeux concrets du métier.
                 </motion.p>

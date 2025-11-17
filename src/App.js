@@ -12,7 +12,6 @@ import Projets from "./pages/Projets.jsx";
 
 
 
-// Créez un composant séparé pour le contenu qui utilise useLocation
 function AppContent() {
   const location = useLocation();
 

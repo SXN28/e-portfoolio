@@ -16,7 +16,7 @@ const Projets = () => {
         ...doc.data(),
       }));
       setProjets(projetsList);
-      setFilteredProjets(projetsList); // Initialiser avec tous les projets
+      setFilteredProjets(projetsList);
     };
 
     fetchProjets();
@@ -61,7 +61,7 @@ const Projets = () => {
         <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Boutons de filtrage */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {["tous", "personnel", "entreprise", "école"].map((filter) => (
+            {["tous", "personnel", "entreprise"].map((filter) => (
               <button
                 key={filter}
                 onClick={() => filterProjects(filter)}
